@@ -1,0 +1,409 @@
+[
+    {
+        "isin": "ISIN_TECH001",
+        "issue_date": "20210107",
+        "tags": ["cirdan", "exercise"],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 202.375,
+                "start_date": "20210107",
+                "quantity": 88.9
+            },
+            {
+                "type": "ZC",
+                "value": 219.25,
+                "start_date": "20210105",
+                "quantity": 77.7
+            },
+            {
+                "type": "ZC",
+                "value": 72.375,
+                "start_date": "20210106",
+                "quantity": 59.3
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH002",
+        "issue_date": "20210103",
+        "tags": [
+            "tech"
+        ],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH003",
+        "issue_date": "20210106",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH004",
+        "issue_date": "20210111",
+        "tags": [
+            "tech"
+        ],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 86.25,
+                "start_date": "20210103",
+                "quantity": 44
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH005",
+        "issue_date": "20210103",
+        "tags": [
+            "tech"
+        ],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 156.75,
+                "start_date": "20210104",
+                "quantity": 56.7
+            },
+            {
+                "type": "CB",
+                "value": 170.5,
+                "start_date": "20210106",
+                "tickers": []
+            },
+            {
+                "type": "CB",
+                "value": 14.375,
+                "start_date": "20210105",
+                "tickers": []
+            },
+            {
+                "type": "CB",
+                "value": 223.75,
+                "start_date": "20210104",
+                "tickers": [
+                    "ABC"
+                ]
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH006",
+        "issue_date": "20210101",
+        "tags": [],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH007",
+        "issue_date": "20210107",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": [
+            {
+                "type": "CB",
+                "value": 35.5,
+                "start_date": "20210101",
+                "tickers": [
+                    "ABC",
+                    "DEF"
+                ]
+            },
+            {
+                "type": "ZC",
+                "value": 123.625,
+                "start_date": "20210107",
+                "quantity": 24.7
+            },
+            {
+                "type": "CB",
+                "value": 222.75,
+                "start_date": "20210106",
+                "tickers": [
+                    "ABC",
+                    "DEF",
+                    "GHI"
+                ]
+            },
+            {
+                "type": "ZC",
+                "value": 170,
+                "start_date": "20210105",
+                "quantity": 39.7
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH008",
+        "issue_date": "20210103",
+        "tags": [],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH009",
+        "issue_date": "20210103",
+        "tags": [],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 212.5,
+                "start_date": "20210104",
+                "quantity": 21.9
+            },
+            {
+                "type": "CB",
+                "value": 38.5,
+                "start_date": "20210103",
+                "tickers": [
+                    "ABC",
+                    "DEF",
+                    "GHI",
+                    "JKL"
+                ]
+            },
+            {
+                "type": "CB",
+                "value": 160.5,
+                "start_date": "20210105",
+                "tickers": [
+                    "ABC"
+                ]
+            },
+            {
+                "type": "ZC",
+                "value": 120.75,
+                "start_date": "20210104",
+                "quantity": 54
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH010",
+        "issue_date": "20210105",
+        "tags": [],
+        "components": [
+            {
+                "type": "CB",
+                "value": 17.5,
+                "start_date": "20210102",
+                "tickers": [
+                    "ABC",
+                    "DEF"
+                ]
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH011",
+        "issue_date": "20210104",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 44.125,
+                "start_date": "20210101",
+                "quantity": 74.2
+            },
+            {
+                "type": "ZC",
+                "value": 161.75,
+                "start_date": "20210101",
+                "quantity": 12.6
+            },
+            {
+                "type": "ZC",
+                "value": 9.5,
+                "start_date": "20210104",
+                "quantity": 35.7
+            },
+            {
+                "type": "CB",
+                "value": 60.75,
+                "start_date": "20210103",
+                "tickers": [
+                    "ABC",
+                    "DEF",
+                    "GHI"
+                ]
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH012",
+        "issue_date": "20210105",
+        "tags": [],
+        "components": [
+            {
+                "type": "CB",
+                "value": 178.5,
+                "start_date": "20210101",
+                "tickers": [
+                    "ABC",
+                    "DEF",
+                    "GHI",
+                    "JKL"
+                ]
+            },
+            {
+                "type": "ZC",
+                "value": 92.25,
+                "start_date": "20210103",
+                "quantity": 83.7
+            },
+            {
+                "type": "CB",
+                "value": 141.125,
+                "start_date": "20210102",
+                "tickers": []
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH013",
+        "issue_date": "20210102",
+        "tags": [],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH014",
+        "issue_date": "20210101",
+        "tags": [],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 10,
+                "start_date": "20210103",
+                "quantity": 78.6
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH015",
+        "issue_date": "20210101",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH016",
+        "issue_date": "20210105",
+        "tags": [
+            "tech"
+        ],
+        "components": []
+    },
+    {
+        "isin": "ISIN_TECH017",
+        "issue_date": "20210108",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 124.75,
+                "start_date": "20210102",
+                "quantity": 20.8
+            },
+            {
+                "type": "ZC",
+                "value": 169.625,
+                "start_date": "20210101",
+                "quantity": 63.5
+            },
+            {
+                "type": "ZC",
+                "value": 173.125,
+                "start_date": "20210105",
+                "quantity": 6.7
+            },
+            {
+                "type": "ZC",
+                "value": 94.75,
+                "start_date": "20210105",
+                "quantity": 21.7
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH018",
+        "issue_date": "20210111",
+        "tags": [
+            "tech"
+        ],
+        "components": [
+            {
+                "type": "CB",
+                "value": 233.125,
+                "start_date": "20210102",
+                "tickers": [
+                    "ABC"
+                ]
+            },
+            {
+                "type": "ZC",
+                "value": 87.75,
+                "start_date": "20210106",
+                "quantity": 92.9
+            },
+            {
+                "type": "CB",
+                "value": 72.75,
+                "start_date": "20210107",
+                "tickers": []
+            },
+            {
+                "type": "ZC",
+                "value": 59.625,
+                "start_date": "20210105",
+                "quantity": 4
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH019",
+        "issue_date": "20210110",
+        "tags": [
+            "tech",
+            "technology"
+        ],
+        "components": [
+            {
+                "type": "ZC",
+                "value": 234.75,
+                "start_date": "20210105",
+                "quantity": 30.6
+            }
+        ]
+    },
+    {
+        "isin": "ISIN_TECH020",
+        "issue_date": "20210111",
+        "tags": [
+            "tech"
+        ],
+        "components": [
+            {
+                "type": "CB",
+                "value": 52.375,
+                "start_date": "20210104",
+                "tickers": [
+                    "ABC",
+                    "DEF",
+                    "GHI"
+                ]
+            }
+        ]
+    }
+]

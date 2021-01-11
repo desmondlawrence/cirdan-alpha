@@ -1,0 +1,88 @@
+<h2>Structured Product Details</h2>
+<div *ngIf="loading; else details">
+    <span>Retrieving product details</span>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<ng-template #details>
+    <div *ngIf="product; else invalidIsin" fxLayout="column">
+        <p><span class="header">ISIN:</span>{{ product.isin }}</p>
+        <p><span class="header">Issue Date:</span>{{ product.issueDate | date:'longDate' }}</p>
+        <p><span class="header">Tags:</span>
+            <span class="tag" *ngFor="let tag of product.tags">
+                {{ tag }}
+            </span>
+        </p>
+        <div *ngFor="let component of product.components" class="component">
+            <p><span class="header">Type:</span>{{ component.type }}</p>
+            <p><span class="header">Start Date:</span>{{ component.startDate | date:'longDate' }}</p>
+            <p><span class="header">Value:</span>{{ component.value }}</p>
+            <div *ngIf="component.type === 'CB'; else quantity">
+                <div><span class="header">Tickers:</span>
+                    <span *ngFor="let ticker of getTickers(component)" class="ticker">{{ ticker }}</span>
+                </div>
+            </div>
+            <ng-template #quantity>
+                <p><span class="header">Quantity:</span>{{ getQuantity(component) }}</p>
+            </ng-template>
+        </div>
+        <div fxLayout="column" fxFlex=100 fxLayoutAlign="center" fxLayoutGap=16 class="new component">
+            <span>
+                <h3>New component</h3>
+            </span>
+            <form [formGroup]="componentFormGroup" fxFlex=80 fxLayout="column" fxLayoutGap="16px">
+                <mat-form-field>
+                    <mat-label>Component Type</mat-label>
+                    <mat-select formControlName="type" name="componentType" required>
+                        <mat-option [value]="'CB'">CB</mat-option>
+                        <mat-option [value]="'ZC'">ZC</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="hasError('type', 'required')">Please choose a component type</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Value</mat-label>
+                    <input matNativeControl type="text" formControlName="value">
+                    <mat-placeholder>123.45</mat-placeholder>
+                    <mat-error>Value must be a number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error>Please choose a valid start date</mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="componentFormGroup.get('type')?.value == 'ZC'">
+                    <mat-label>Quantity</mat-label>
+                    <input matNativeControl type="text" formControlName="quantity">
+                    <mat-placeholder>100</mat-placeholder>
+                    <mat-error>Value must be an integer</mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="componentFormGroup.get('type')?.value == 'CB'">
+                    <mat-chip-list #chipList aria-label="Tickers" formControlName="tickers">
+                        <mat-chip *ngFor="let ticker of tickers?.value" (removed)="removeTicker(ticker)">
+                            {{ ticker }}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input [matChipInputFor]="chipList" matChipInputAddOnBlur="true"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            (matChipInputTokenEnd)="addTicker($event)">
+                    </mat-chip-list>
+                    <mat-hint>Please enter tickers separated by comma</mat-hint>
+                </mat-form-field>
+                <div fxFlex=100 fxLayoutAlign="end center">
+                    <button mat-raised-button color="primary" (click)="addComponent()" [disabled]="submitting">Add
+                        Component </button>
+                </div>
+                <div *ngIf="submitting" fxLayout="column">
+                    <span>Updating product</span>
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                    <mat-error>{{ updateError }}</mat-error>
+                </div>
+            </form>
+        </div>
+    </div>
+    <ng-template #invalidIsin>
+        <p>{{ error }}</p>
+        <a (click)="refresh()">Refresh</a>
+    </ng-template>
+</ng-template>

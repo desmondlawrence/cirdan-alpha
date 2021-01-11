@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+.mat-row {
+    cursor: pointer;
+    &:nth-child(odd) {
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        } 
+    }
+    &:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.2);
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        } 
+    }
+}

@@ -1,0 +1,11 @@
+<div fxLayout="column">
+    <h1>Cirdan Capital Exercise</h1>
+    <div fxFlex=100 fxLayout="row" fxLayoutAlign="start center">
+        <span fxLayoutAlign="space-evenly">
+            <a [routerLink]="['']"><mat-icon>home</mat-icon></a>
+        </span>
+        <span *ngFor="let breadcrumb of breadcrumbs" fxLayoutAlign="space-evenly">
+            <mat-icon>chevron_right</mat-icon><a [routerLink]="[breadcrumb.url]">{{ breadcrumb.label }}</a>
+        </span>
+    </div>
+</div>

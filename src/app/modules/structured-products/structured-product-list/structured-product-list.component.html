@@ -1,0 +1,44 @@
+<div fxLayout="column">
+    <h2>Structured Product List</h2>
+
+    <mat-form-field fxFlex=100>
+        <mat-label>Search structured products</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #filter>
+        <mat-hint>Search structured products by ISIN or tags</mat-hint>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="structuredProductDS" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="isin">
+            <th mat-header-cell *matHeaderCellDef>ISIN</th>
+            <td mat-cell *matCellDef="let product"> {{ product.isin }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="issueDate">
+            <th mat-header-cell *matHeaderCellDef>Issue Date</th>
+            <td mat-cell *matCellDef="let product"> {{ product.issueDate | date:'longDate' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tags">
+            <th mat-header-cell *matHeaderCellDef>Tags</th>
+            <td mat-cell *matCellDef="let product"> {{ product.tags }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="components">
+            <th mat-header-cell *matHeaderCellDef>Components</th>
+            <td mat-cell *matCellDef="let product"> {{ product.components ? '(' + product.components.length + ')' : ''
+                }}
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let product; columns: displayColumns;" (click)="getDetails(product.isin)"></tr>
+    </table>
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <div *ngIf="error">
+        <p>{{ error }}</p>
+        <a (click)="refresh()">Refresh</a>
+    </div>
+</div>
